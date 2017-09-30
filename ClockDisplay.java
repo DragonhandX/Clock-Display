@@ -24,7 +24,7 @@ public class ClockDisplay
      */
     public ClockDisplay()
     {
-        hours = new NumberDisplay(24);
+        hours = new NumberDisplay(25); // changed to 25 so that it would actually read someone putting in 24
         minutes = new NumberDisplay(60);
         updateDisplay();
     }
@@ -36,7 +36,7 @@ public class ClockDisplay
      */
     public ClockDisplay(int hour, int minute)
     {
-        hours = new NumberDisplay(24);
+        hours = new NumberDisplay(25); // so now the 12th hour has 3 inputs; 00, 12, and 24
         minutes = new NumberDisplay(60);
         setTime(hour, minute);
     }
@@ -78,7 +78,8 @@ public class ClockDisplay
      */
     private void updateDisplay()
     {
-        displayString = hours.getDisplayValue() + ":" + 
+        displayString = hours.getHourDisplayValue() + ":" + 
                         minutes.getDisplayValue();
+        
     }
 }

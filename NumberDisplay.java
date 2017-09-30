@@ -47,6 +47,22 @@ public class NumberDisplay
             return "" + value;
         }
     }
+    
+    public String getHourDisplayValue() // decided to make a whole new thing for the hour display
+    {
+        if(value > 12) { // 13 and over gets sent down a dozen
+            value = value - 12;
+        }
+        if(value == 0) { // 00 is 12 midnight
+            value = value + 12;
+        }
+        if(value < 10) {
+            return "0" + value;
+        }
+        else {
+            return "" + value;
+        }
+    }
 
     /**
      * Set the value of the display to the new specified value. If the new
